@@ -98,6 +98,7 @@ export const globalMixin = {
             'SET_INNER_IMAGE_COLOR',
             'SET_CSS_TO_DIV_DATA_INNER',
             'MOVE_ITEM_DIV_DATA_INNER',
+            'REMOVE_IMAGE_BACKROUND_PATH'
         ]),
         addClick (type, dynamicId) {
             // this.showIcon = true;
@@ -210,7 +211,7 @@ export const globalMixin = {
             // alert('jhdghhs')
         },
         applyChanges () {
-            // alert(this.testDiv)
+            alert('hsajsajs')
             // alert(this.mediaType);
             if (this.mediaType == 1) {
                console.log(this.imagePath, 'test_data')
@@ -246,8 +247,9 @@ export const globalMixin = {
             this.ACTION_CHANGE_STATE(['btnClicked', true])
             this.ACTION_CHANGE_STATE(['storedValue',  ''])
             // this.ACTION_CHANGE_STATE(['imageBackgroundPath', '']);
-            this.imageBackgroundPath == '';
+            // this.imageBackgroundPath == '';
             console.log(this.storedValue , 'on Apply');
+          
            
         },
         closeModal () {
@@ -301,6 +303,7 @@ export const globalMixin = {
                 console.log(this.isFromInnerEyePicker , 'from inner picker')
                 this.SET_INNER_IMAGE_COLOR(['background-image', 'url('+this.imageBackgroundPath+')'])
             } 
+            this.REMOVE_IMAGE_BACKROUND_PATH()
             // else {
             //     alert('sgagssgshgasags  ')
             //     this.ACTION_CHANGE_STATE(['imagePath', image])

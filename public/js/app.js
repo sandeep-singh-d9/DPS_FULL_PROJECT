@@ -82451,7 +82451,7 @@ var globalMixin = {
       $('[data-toggle="tooltip"]').tooltip();
     });
   },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['ACTION_CHANGE_STATE', 'ACTION_ADD_VALUE_TO_DIV_DATA', 'ACTION_REMOVE_VALUE_FROM_DIV_DATA', 'ACTION_SET_CSS', 'ACTION_COPY_DIV_DATA', 'ACTION_EMPTY_DIVS_VALUE', 'ACTION_COPY_DIV_WITH_INNER_DATA', 'ACTION_COPY_FULL_ROW_DIV_WITH_INNER_DATA']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['REMOVE_ITEM_FROM_DIV_DATA', 'REMOVE_ITEM_AT_DIV_DATA', 'MOVE_ITEM_DIV_DATA', 'SET_INNER_IMAGE_COLOR', 'SET_CSS_TO_DIV_DATA_INNER', 'MOVE_ITEM_DIV_DATA_INNER']), {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['ACTION_CHANGE_STATE', 'ACTION_ADD_VALUE_TO_DIV_DATA', 'ACTION_REMOVE_VALUE_FROM_DIV_DATA', 'ACTION_SET_CSS', 'ACTION_COPY_DIV_DATA', 'ACTION_EMPTY_DIVS_VALUE', 'ACTION_COPY_DIV_WITH_INNER_DATA', 'ACTION_COPY_FULL_ROW_DIV_WITH_INNER_DATA']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['REMOVE_ITEM_FROM_DIV_DATA', 'REMOVE_ITEM_AT_DIV_DATA', 'MOVE_ITEM_DIV_DATA', 'SET_INNER_IMAGE_COLOR', 'SET_CSS_TO_DIV_DATA_INNER', 'MOVE_ITEM_DIV_DATA_INNER', 'REMOVE_IMAGE_BACKROUND_PATH']), {
     addClick: function addClick(type, dynamicId) {
       // this.showIcon = true;
       this.ACTION_CHANGE_STATE(['showIcon', false]);
@@ -82563,8 +82563,8 @@ var globalMixin = {
       this.ACTION_CHANGE_STATE(['dynamicIndex', index]); // alert('jhdghhs')
     },
     applyChanges: function applyChanges() {
-      // alert(this.testDiv)
-      // alert(this.mediaType);
+      alert('hsajsajs'); // alert(this.mediaType);
+
       if (this.mediaType == 1) {
         console.log(this.imagePath, 'test_data'); // mediatype = 1 means Image
 
@@ -82601,8 +82601,8 @@ var globalMixin = {
       this.ACTION_CHANGE_STATE(['imageArea', false]);
       this.ACTION_CHANGE_STATE(['btnClicked', true]);
       this.ACTION_CHANGE_STATE(['storedValue', '']); // this.ACTION_CHANGE_STATE(['imageBackgroundPath', '']);
+      // this.imageBackgroundPath == '';
 
-      this.imageBackgroundPath == '';
       console.log(this.storedValue, 'on Apply');
     },
     closeModal: function closeModal() {
@@ -82660,11 +82660,12 @@ var globalMixin = {
       } else if (this.isFromInnerEyePicker) {
         console.log(this.isFromInnerEyePicker, 'from inner picker');
         this.SET_INNER_IMAGE_COLOR(['background-image', 'url(' + this.imageBackgroundPath + ')']);
-      } // else {
+      }
+
+      this.REMOVE_IMAGE_BACKROUND_PATH(); // else {
       //     alert('sgagssgshgasags  ')
       //     this.ACTION_CHANGE_STATE(['imagePath', image])
       // }
-
 
       this.resetImageReated();
     },
@@ -83708,6 +83709,13 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       // Remove item from divData array
       alert('sdgshdsdgdsgd');
       state.divData.splice(state.divData.indexOf(value), 1);
+    },
+    REMOVE_IMAGE_BACKROUND_PATH: function REMOVE_IMAGE_BACKROUND_PATH(state, value) {
+      console.log(this.imageBackgroundPath, 'one');
+      console.log(state, 'state');
+      this.state.imageBackgroundPath = ''; // console.log(this.imageBackgroundPath , 'after') 
+
+      console.log(state, 'state After');
     },
     REMOVE_ITEM_AT_DIV_DATA: function REMOVE_ITEM_AT_DIV_DATA(state, value) {
       // Remove Item at divData array

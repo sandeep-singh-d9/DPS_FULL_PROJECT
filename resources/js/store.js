@@ -626,6 +626,13 @@ export const store = new Vuex.Store({
             alert('sdgshdsdgdsgd')
             state.divData.splice(state.divData.indexOf(value), 1);
         },
+        REMOVE_IMAGE_BACKROUND_PATH (state , value ) {
+            console.log(this.imageBackgroundPath, 'one')
+            console.log(state ,'state' ) 
+            this.state.imageBackgroundPath = ''
+            // console.log(this.imageBackgroundPath , 'after') 
+            console.log(state ,'state After' ) 
+        },
         REMOVE_ITEM_AT_DIV_DATA (state, value) {
             // Remove Item at divData array
             console.log(value, 'REMOVE_ITEM_AT_DIV_DATA')
